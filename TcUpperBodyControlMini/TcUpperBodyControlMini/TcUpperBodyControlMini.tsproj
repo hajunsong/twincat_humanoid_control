@@ -1,0 +1,1269 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.23">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{284DF5A2-1A3B-46FC-A5F2-6D96C5A94F64}">MotorSt</Name>
+			<BitSize>120</BitSize>
+			<SubItem>
+				<Name>nStatusWord</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nActualPosition</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nActualVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nActualTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nModeOfOperationDisp</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{5E7183E5-91FC-4FB6-A1F1-CDF56C76DD4A}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{773B787B-A75B-4727-8157-62F88A9DC62B}">ModorCmd</Name>
+			<BitSize>120</BitSize>
+			<SubItem>
+				<Name>nControlWord</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nTargetPosition</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nTargetVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nTargetTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nMaxTorque</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nModeOfOperation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{6352C22C-1449-42DA-B924-AB09056AD1B8}"/>
+				<Hide GUID="{FBFF3DA6-3624-4BCE-88EA-E45AD0E477B1}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{F437E7C1-944C-44C6-A869-EB7CC0408295}">PathParameter</Name>
+			<BitSize>168</BitSize>
+			<SubItem>
+				<Name>nTotalTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nStepSize</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nUpdate</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nSetPosition</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>136</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{9E65A044-C2A1-4029-8A62-987F2E4840E5}">JogParameter</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>nJogID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nJogTick</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{07B21F7A-8B64-41FE-9A7C-049AB3A25C62}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000008}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BYTE</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000012170000121700000000000000000000ffffffffffffffffffffffffffffffffffffffffffff8000ff8000ff8000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000ff00000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff000000c0c0c0c0c0c0000000c0c0c0c0c0c0000000808080ff0000ff0000ff0000ff0000ffffffffffffffffffffffff00000000ff00c0c0c000000000ff00c0c0c0000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffffffffffffffffffffffffffffffffffffff000000c0c0c0c0c0c0000000c0c0c0c0c0c0000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff00000000ff00c0c0c000000000ff00c0c0c0000000808080ff0000ff0000ff0000ff0000ffffffffffffff0000ffffff000000000000000000000000000000000000000000808080ffffffffffffff0000ffffffff0000ff0000ff0000ff000000000080ffff80ffff000000c0c0c0c0c0c0000000808080ffffffffffffffffffffffffffffffffffffff0000ffffff00000000ff0080ffff00000000ff00c0c0c0000000808080ffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffffffffffffffffffffffffffffffffffffff00000000ff00000000000000000000000000000000808080ffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffffffffffffff</ImageData>
+		<ImageData Id="1001">424dd8020000000000003600000028000000100000000e0000000100180000000000a2020000120b0000120b000000000000000000001306e31306e3190ce42b1fe62b1fe61306e31f13e5190ce42519e51306e31306e3190ce42f24e7190ce41306e31306e31306e31306e35f56ec645ced645ced4137e91f13e5473de95f57ec3227e71306e3473de95a51ec271be61306e31306e31409ca524cc68e8ad74f48c1615cc82218d03e36bf716bce746fce453dc01307ce3931ba7d78d27671d1150cb21409ca1712801b1d1d1b1d1d1b1d1d1b1d1d120b891b1d1d1b1d1d1b1d1d1b1d1d120b891b1d1d1b1d1d1b1d1d1b1d1d1712801712807f8080d4d5d5d4d5d5383939120b89545656d4d5d5d4d5d5626464130c89292b2bd4d5d5d4d5d56264641915801712804647471b1d1daaaaaad4d5d5130e82383939292b2b717272d4d5d5151183d4d5d57f80801b1d1d7172721e1c81191580464747d4d5d5d4d5d51b1d1d19158a292b2bd4d5d5d4d5d5292b2b1b1b8ad4d5d56264641b1d1d1b1d1d2427821e1d81d4d5d54647476264643839391e208bd4d5d57f8080464747545656242a8bd4d5d59b9c9c292b2baaaaaa2d3683252882464747d4d5d5d4d5d51b1d1d272d85292b2bd4d5d5d4d5d5292b2b2e37861b1d1dd4d5d5d4d5d5464747394484323bb52324812122822426822526824554c0323883292b822a2d83353c84424cbf3238843940842e32834853865d6ebb5262eb3e43e83334e74147e94349e9535feb4d56ea5662eb484dea545deb636fed545aea5a63ec6671ed8ca0f290a5f2748aef6b7bee5d68ec6874ed788aef8397f17684ef7986ef8c9ff2818ff1818ef08e9df18a97f18791f19ba9f3b0c0f691a4f291a2f28390f192a1f29cacf3a3b3f498a6f3a4b3f4aebdf5b0bef59ea8f3a3adf4bbc7f7c4d1f8cad7f8ced9f9b4c4f6b8c8f6acb8f59aa3f3b6c1f6c5d2f8c2cdf8ccd7f9d2ddf9d5e0fad2daf9d5dcf9dfe7fbe2e9fbe5ebfbe8eefb0000</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000012170000121700000000000000000000ffffffffffffffffffffffff00000000ff00000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff000000c0c0c0c0c0c0000000c0c0c0c0c0c0000000808080ff0000ff0000ff0000ff0000ffffffffffffffffffffffff00000000ff00c0c0c000000000ff00c0c0c0000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff000000000000000000000000000000060606000000808080ffffffffffffffffffffffffffffffffffffffffffffffff000000c0c0c0c0c0c0000000c0c0c0c0c0c0000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff00000000ff00c0c0c000000000ff00c0c0c0000000808080ff0000ff0000ff0000ff0000ffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff00000080ffff80ffff000000c0c0c0c0c0c0000000808080ffffffffffffffffffffffffffffffffffffffffffffffff00000000ff0080ffff00000000ff00c0c0c0000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ff0000ff0000ff0000ff0000ffffffffffffffffffffffff00000000ff00000000000000000000000000000000808080ffffffffffffff0000ffffffffffffffffffffffffffffff000000000000000000000000000000000000000000808080ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8000ff8000ff8000ffffffffffffffffffffffffffffffffffff</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{04B1F728-EAE6-B22F-F40A-372F889EECF7}" TargetNetId="221.102.111.71.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
+		<System>
+			<Tasks>
+				<Task Id="2" Priority="1" CycleTime="10000" AmsPort="350" AdtTasks="true">
+					<Name>Task 2</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Cpp>
+			<Project GUID="{3ED14537-ECB4-411E-B90B-C553702CB69C}" Name="Controller" PrjFilePath="Controller\Controller.vcxproj" TmcFilePath="Controller\Controller.tmc">
+				<Instance Id="#x01010010" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|Controller|0.0.0.1">
+					<Name>Controller_Obj</Name>
+					<TmcDesc GUID="{CAF14BC6-8C3E-4497-B9C7-C57C83C030C7}" ClassFactoryId="C++ Module Vendor|Controller|0.0.0.1">
+						<Name>Module</Name>
+						<CLSID ClassFactory="Controller">{CAF14BC6-8C3E-4497-B9C7-C57C83C030C7}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>PSO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<ManualConfig>
+									<OTCID>#x02010020</OTCID>
+								</ManualConfig>
+								<Priority>1</Priority>
+								<CycleTime>1000000</CycleTime>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface DisableCodeGeneration="true">
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+							</Interface>
+							<Interface DisableCodeGeneration="true">
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+							</Interface>
+							<Interface DisableCodeGeneration="true">
+								<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter HideParameter="true">
+								<Name>TraceLevelMax</Name>
+								<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+								<PTCID>#x03002103</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter>
+								<Name>DefaultAdsPort</Name>
+								<Comment><![CDATA[ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.]]></Comment>
+								<BitSize>16</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<Default>
+									<Value>-1</Value>
+								</Default>
+								<PTCID>#x00000001</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter>
+								<Name>ContextAdsPort</Name>
+								<Comment><![CDATA[ADS port number of the task associated with context 1]]></Comment>
+								<BitSize>16</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x03002090</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter OnlineParameter="true" DisableCodeGeneration="true" CreateSymbol="true">
+								<Name>AdsPort</Name>
+								<Comment><![CDATA[ADS port number actually used by the module instance.]]></Comment>
+								<BitSize>16</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000002</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter OnlineParameter="true" CreateSymbol="true">
+								<Name>Counter</Name>
+								<Comment><![CDATA[Incremented continuously if module instance is in started mode.]]></Comment>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<PTCID>#x00000003</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+						</Parameters>
+						<DataAreas>
+							<DataArea>
+								<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+								<Name>MotorStArea</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>105</ByteSize>
+								<Symbol>
+									<Name>Data</Name>
+									<BitSize>840</BitSize>
+									<BaseType GUID="{284DF5A2-1A3B-46FC-A5F2-6D96C5A94F64}">MotorSt</BaseType>
+									<ArrayInfo>
+										<LBound>0</LBound>
+										<Elements>7</Elements>
+									</ArrayInfo>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+								<Name>MotorCmdArea</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>105</ByteSize>
+								<Symbol>
+									<Name>Data</Name>
+									<BitSize>840</BitSize>
+									<BaseType GUID="{773B787B-A75B-4727-8157-62F88A9DC62B}">ModorCmd</BaseType>
+									<ArrayInfo>
+										<LBound>0</LBound>
+										<Elements>7</Elements>
+									</ArrayInfo>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="Standard">3</AreaNo>
+								<Name>ServerToClient</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>210</ByteSize>
+								<Symbol>
+									<Name>DataMotorSt</Name>
+									<BitSize>840</BitSize>
+									<BaseType GUID="{284DF5A2-1A3B-46FC-A5F2-6D96C5A94F64}">MotorSt</BaseType>
+									<ArrayInfo>
+										<LBound>0</LBound>
+										<Elements>7</Elements>
+									</ArrayInfo>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>DataMotorCmd</Name>
+									<BitSize>840</BitSize>
+									<BaseType GUID="{773B787B-A75B-4727-8157-62F88A9DC62B}">ModorCmd</BaseType>
+									<ArrayInfo>
+										<LBound>0</LBound>
+										<Elements>7</Elements>
+									</ArrayInfo>
+									<BitOffs>840</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="Standard">4</AreaNo>
+								<Name>ClientToServer</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>155</ByteSize>
+								<Symbol>
+									<Name>MainCmd</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>SubCmd</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<BitOffs>16</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>PathCmd</Name>
+									<BitSize>1176</BitSize>
+									<BaseType GUID="{F437E7C1-944C-44C6-A869-EB7CC0408295}">PathParameter</BaseType>
+									<ArrayInfo>
+										<LBound>0</LBound>
+										<Elements>7</Elements>
+									</ArrayInfo>
+									<BitOffs>32</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>JogCmd</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{9E65A044-C2A1-4029-8A62-987F2E4840E5}">JogParameter</BaseType>
+									<BitOffs>1208</BitOffs>
+								</Symbol>
+							</DataArea>
+						</DataAreas>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002060</PTCID>
+								<Name>CyclicCaller</Name>
+								<Type GUID="{0300001E-0000-0000-E000-000000000064}">ITcCyclicCaller</Type>
+							</InterfacePointer>
+						</InterfacePointers>
+						<ParameterValues>
+							<Value>
+								<Name>TraceLevelMax</Name>
+								<EnumText>tlAlways</EnumText>
+							</Value>
+							<Value>
+								<Name>DefaultAdsPort</Name>
+								<Value>65535</Value>
+							</Value>
+							<Value>
+								<Name>ContextAdsPort</Name>
+								<Value>350</Value>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>CyclicCaller</Name>
+								<OTCID>#x02010020</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Instance>
+			</Project>
+		</Cpp>
+		<Io>
+			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="221.102.111.71.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
+				<Name>Device 1 (EtherCAT)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>enp86s0 (TwinCAT Intel Ethernet Adapter)</DeviceDesc>
+						<DeviceName>enp86s0</DeviceName>
+						<DeviceData>88aedd666f47</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="1" AddrType="9" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box Id="1" BoxType="9099">
+					<Name>Box 1 (GX-JC06(IN,X2,X3) Main device)</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT SlaveType="1" PdiType="#x0500" CycleMBoxPollingTime="0" VendorId="#x00000083" ProductCode="#x00000064" RevisionNo="#x00010001" PortPhys="4881" SubdevicePorts="4" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="GX-JC06(IN,X2,X3) 6 port junction slave" Desc="GX-JC06(IN,X2,X3) Main device" PortABoxInfo="#x00ffffff"/>
+					<Box Id="2" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 2 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x03000001">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="3" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 3 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x01000002">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="4" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 4 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x01000003">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="5" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 5 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x01000004">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="6" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 6 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x01000005">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="7" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 7 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x01000006">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="8" BoxType="9099" BoxFlags="#x00000020">
+						<Name>Drive 8 (MT_Device)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="2" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" VendorId="#x00202008" RevisionNo="#x00010000" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="MT_Device" Desc="MT_Device" PortABoxInfo="#x01000007">
+							<SyncMan>001080002600010001000000240080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000240080008000801022010000</SyncMan>
+							<SyncMan>001110006400010003000000000000001000001164010000</SyncMan>
+							<SyncMan>001410002000010004000000000000001000001420010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<DcData>0003000000000000000000000000000001000000010000000000000000000000</DcData>
+							<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000030100000000000000000000000000000000000000000000000000000000000000</DcMode>
+							<Pdo Name="SND PDO Mapping0" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="SND PDO Mapping1" Index="#x1a01" Flags="#x0010">
+								<Entry Name="status word" Index="#x6041">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="position actual value" Index="#x6064">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="velocity actual value" Index="#x606c">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="torque actual value" Index="#x6077">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="error code" Index="#x603f">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation display" Index="#x6061">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping0" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="Max Torque" Index="#x6072">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="RCV PDO Mapping1" Index="#x1601" InOut="1" Flags="#x0010">
+								<Entry Name="control word" Index="#x6040">
+									<Type>UINT</Type>
+								</Entry>
+								<Entry Name="target position" Index="#x607a">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="target velocity" Index="#x60ff">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="Target Torque" Index="#x6071">
+									<Type>INT</Type>
+								</Entry>
+								<Entry Name="PVT_KP" Index="#x2000">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="PVT_KD" Index="#x2001">
+									<Type>DINT</Type>
+								</Entry>
+								<Entry Name="modes of operation" Index="#x6060">
+									<Type>SINT</Type>
+								</Entry>
+								<Entry>
+									<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="402"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="9" BoxType="9099">
+						<Name>Term 9 (GX-JC06(X4,X5,X6) Sub-device)</Name>
+						<ImageId>1002</ImageId>
+						<EtherCAT SlaveType="1" PdiType="#x0500" CycleMBoxPollingTime="0" VendorId="#x00000083" ProductCode="#x00000065" RevisionNo="#x00010001" PortPhys="4371" SubdevicePorts="1" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="GX-JC06(X4,X5,X6) 6 port junction slave" Desc="GX-JC06(X4,X5,X6) Sub-device" PortABoxInfo="#x02000001"/>
+					</Box>
+				</Box>
+				<EtherCAT DcSyncMode="3"/>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<OwnerA Name="TIID^Device 1 (EtherCAT)">
+			<OwnerB Name="TIXC^Controller^Controller_Obj">
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[0]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[0]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[0]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[0]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[0]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[0]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[0]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[0]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[0]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[0]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[0]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 2 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[0]^nActualVelocity"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[1]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[1]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[1]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[1]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[1]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[1]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[1]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[1]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[1]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[1]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[1]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 3 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[1]^nActualVelocity"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[2]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[2]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[2]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[2]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[2]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[2]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[2]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[2]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[2]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[2]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[2]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 4 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[2]^nActualVelocity"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[3]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[3]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[3]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[3]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[3]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[3]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[3]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[3]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[3]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[3]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[3]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 5 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[3]^nActualVelocity"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[4]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[4]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[4]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[4]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[4]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[4]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[4]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[4]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[4]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[4]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[4]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 6 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[4]^nActualVelocity"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[5]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[5]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[5]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[5]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[5]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[5]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[5]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[5]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[5]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[5]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[5]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 7 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[5]^nActualVelocity"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^RCV PDO Mapping0^Max Torque" VarB="MotorCmdArea^Data[6]" Size="16" OffsB="96"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^RCV PDO Mapping0^Target Torque" VarB="MotorCmdArea^Data[6]" Size="16" OffsB="80"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^RCV PDO Mapping0^control word" VarB="MotorCmdArea^Data[6]"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^RCV PDO Mapping0^modes of operation" VarB="MotorCmdArea^Data[6]" Size="8" OffsB="112"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^RCV PDO Mapping0^target position" VarB="MotorCmdArea^Data[6]" Size="32" OffsB="16"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^RCV PDO Mapping0^target velocity" VarB="MotorCmdArea^Data[6]" Size="32" OffsB="48"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^SND PDO Mapping0^error code" VarB="MotorStArea^Data[6]^nErrorCode"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^SND PDO Mapping0^modes of operation display" VarB="MotorStArea^Data[6]^nModeOfOperationDisp"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^SND PDO Mapping0^position actual value" VarB="MotorStArea^Data[6]^nActualPosition"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^SND PDO Mapping0^status word" VarB="MotorStArea^Data[6]^nStatusWord"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^SND PDO Mapping0^torque actual value" VarB="MotorStArea^Data[6]^nActualTorque"/>
+				<Link VarA="Box 1 (GX-JC06(IN,X2,X3) Main device)^Drive 8 (MT_Device)^SND PDO Mapping0^velocity actual value" VarB="MotorStArea^Data[6]^nActualVelocity"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>

@@ -1,0 +1,24 @@
+<Solution>
+  <Configurations>
+    <Platform Name="TwinCAT CE7 (ARMV7)" />
+    <Platform Name="TwinCAT OS (ARMT2)" />
+    <Platform Name="TwinCAT OS (ARMV7-A)" />
+    <Platform Name="TwinCAT OS (ARMV7-M)" />
+    <Platform Name="TwinCAT OS (ARMV8-A)" />
+    <Platform Name="TwinCAT OS (x64)" />
+    <Platform Name="TwinCAT OS (x64-E)" />
+    <Platform Name="TwinCAT RT (x64)" />
+    <Platform Name="TwinCAT RT (x86)" />
+  </Configurations>
+  <Project Path="TcLowerBodyControl/TcLowerBodyControl.tsproj" Type="b1e792be-aa5f-4e3c-8c82-674bf9c0715b">
+    <Platform Solution="*|TwinCAT CE7 (ARMV7)" Project="TwinCAT RT (x86)" />
+    <Platform Solution="*|TwinCAT OS (ARMT2)" Project="TwinCAT RT (x86)" />
+  </Project>
+  <Project Path="YT Scope Project1/YT Scope Project1.tcmproj" Type="fd9f1d59-e000-42f3-8744-88de1be93c06" Id="a99a1889-1593-4898-86d1-0df1bb741fb1">
+    <Platform Solution="*|TwinCAT OS (ARMV7-A)" Project="TwinCAT RT (x86)" />
+    <Platform Solution="*|TwinCAT OS (ARMV7-M)" Project="TwinCAT RT (x86)" />
+    <Platform Solution="*|TwinCAT OS (ARMV8-A)" Project="TwinCAT RT (x86)" />
+    <Platform Solution="*|TwinCAT OS (x64-E)" Project="TwinCAT RT (x86)" />
+    <Build Project="false" />
+  </Project>
+</Solution>

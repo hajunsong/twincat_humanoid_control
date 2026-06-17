@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes>
+    <DataType>
+      <Name GUID="{284df5a2-1a3b-46fc-a5f2-6d96c5a94f64}">MotorSt</Name>
+      <SubItem>
+        <Name>nStatusWord</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nActualPosition</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nActualVelocity</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nActualTorque</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nErrorCode</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nModeOfOperationDisp</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+      </SubItem>
+      <Hides>
+        <Hide GUID="{5e7183e5-91fc-4fb6-a1f1-cdf56c76dd4a}" />
+      </Hides>
+    </DataType>
+    <DataType>
+      <Name GUID="{773b787b-a75b-4727-8157-62f88a9dc62b}">ModorCmd</Name>
+      <SubItem>
+        <Name>nControlWord</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nTargetPosition</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nTargetVelocity</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nTargetTorque</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nMaxTorque</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nModeOfOperation</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+      </SubItem>
+      <Hides>
+        <Hide GUID="{6352c22c-1449-42da-b924-ab09056ad1b8}" />
+        <Hide GUID="{fbff3da6-3624-4bce-88ea-e45ad0e477b1}" />
+      </Hides>
+    </DataType>
+    <DataType>
+      <Name GUID="{f437e7c1-944c-44c6-a869-eb7cc0408295}">PathParameter</Name>
+      <SubItem>
+        <Name>nTotalTime</Name>
+        <Type GUID="{18071995-0000-0000-0000-00000000000e}">LREAL</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nStepSize</Name>
+        <Type GUID="{18071995-0000-0000-0000-00000000000e}">LREAL</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nUpdate</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nSetPosition</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name GUID="{9e65a044-c2a1-4029-8a62-987f2e4840e5}">JogParameter</Name>
+      <SubItem>
+        <Name>nJogID</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+      </SubItem>
+      <SubItem>
+        <Name>nJogTick</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+      </SubItem>
+      <Hides>
+        <Hide GUID="{07b21f7a-8b64-41fe-9a7c-049ab3a25c62}" />
+      </Hides>
+    </DataType>
+  </DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{caf14bc6-8c3e-4497-b9c7-c57c83c030c7}" Group="C++">
+      <Name>Module</Name>
+      <CLSID ClassFactory="Controller">{caf14bc6-8c3e-4497-b9c7-c57c83c030c7}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>PSO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>MotorStArea</Name>
+          <ContextId>1</ContextId>
+          <Symbol CreateSymbol="true">
+            <Name>Data</Name>
+            <BaseType GUID="{284df5a2-1a3b-46fc-a5f2-6d96c5a94f64}">MotorSt</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>7</Elements>
+            </ArrayInfo>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>MotorCmdArea</Name>
+          <ContextId>1</ContextId>
+          <Symbol CreateSymbol="true">
+            <Name>Data</Name>
+            <BaseType GUID="{773b787b-a75b-4727-8157-62f88a9dc62b}">ModorCmd</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>7</Elements>
+            </ArrayInfo>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="Standard" CreateSymbols="true">3</AreaNo>
+          <Name>ServerToClient</Name>
+          <ContextId>1</ContextId>
+          <Symbol CreateSymbol="true">
+            <Name>DataMotorSt</Name>
+            <BaseType GUID="{284df5a2-1a3b-46fc-a5f2-6d96c5a94f64}">MotorSt</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>7</Elements>
+            </ArrayInfo>
+          </Symbol>
+          <Symbol CreateSymbol="true">
+            <Name>DataMotorCmd</Name>
+            <BaseType GUID="{773b787b-a75b-4727-8157-62f88a9dc62b}">ModorCmd</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>7</Elements>
+            </ArrayInfo>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="Standard" CreateSymbols="true">4</AreaNo>
+          <Name>ClientToServer</Name>
+          <ContextId>1</ContextId>
+          <Symbol CreateSymbol="true">
+            <Name>MainCmd</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+          </Symbol>
+          <Symbol CreateSymbol="true">
+            <Name>SubCmd</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+          </Symbol>
+          <Symbol CreateSymbol="true">
+            <Name>PathCmd</Name>
+            <BaseType GUID="{f437e7c1-944c-44c6-a869-eb7cc0408295}">PathParameter</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>7</Elements>
+            </ArrayInfo>
+          </Symbol>
+          <Symbol CreateSymbol="true">
+            <Name>JogCmd</Name>
+            <BaseType GUID="{9e65a044-c2a1-4029-8a62-987f2e4840e5}">JogParameter</BaseType>
+          </Symbol>
+        </DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
+        </InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment />
+    </Module>
+  </Modules>
+  <Library>
+    <Name>Controller</Name>
+    <Version>0.0.0.1</Version>
+  </Library>
+</TcModuleClass>

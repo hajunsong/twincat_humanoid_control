@@ -1,0 +1,64 @@
+# --- 별도 Git 저장소 (https://github.com/hajunsong/twincat_ads_gui) ---
+twincat_ads_gui/
+
+# --- Visual Studio / TwinCAT IDE ---
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+ipch/
+*.opensdf
+*.sdf
+
+# --- TwinCAT 빌드·배포 산출물 ---
+**/_Boot/
+**/_products/
+**/_Repository/
+*.tlog
+*.lastbuildstate
+*.tme.recipe
+*.Build.CppClean.log
+
+# --- TwinCAT 프로젝트 백업 ---
+*.tsproj.bak
+*.dupfix-bak
+*.vcxproj.bak
+*.vcxproj.filters.bak
+
+# --- TwinCAT Scope 기록 ---
+*.svdx
+
+# --- MSVC / C++ 빌드 ---
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]in/
+[Oo]bj/
+*.obj
+*.pch
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.ipdb
+
+# --- 런타임·로그 산출물 ---
+logging/
+*.csv
+
+# --- TwinCAT Scope 로컬 설정 ---
+**/.vsm
+
+# --- OS / 기타 ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+*.swp
+*.swo
