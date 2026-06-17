@@ -1,0 +1,3 @@
+[submodule "twincat_ads_gui"]
+	path = twincat_ads_gui
+	url = https://github.com/hajunsong/twincat_ads_gui.git

@@ -1,6 +1,3 @@
-# --- 별도 Git 저장소 (https://github.com/hajunsong/twincat_ads_gui) ---
-twincat_ads_gui/
-
 # --- Visual Studio / TwinCAT IDE ---
 .vs/
 *.user
